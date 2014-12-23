@@ -55,7 +55,7 @@ namespace network {
             endpoint_cache().swap(*this);
           }
 
-          void swap(endpoint_cache &other) noexcept {
+          void swap(endpoint_cache &other) NETWORK_NOEXCEPT {
             endpoints_.swap(other.endpoints_);
           }
 

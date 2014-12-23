@@ -35,7 +35,7 @@ namespace network {
 
           }
 
-          virtual ~normal_connection() noexcept {
+          virtual ~normal_connection() NETWORK_NOEXCEPT {
 
           }
 

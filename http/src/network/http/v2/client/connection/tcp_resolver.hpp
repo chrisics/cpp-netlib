@@ -54,7 +54,7 @@ namespace network {
           /**
            * \brief Destructor.
            */
-          virtual ~tcp_resolver() noexcept {
+          virtual ~tcp_resolver() NETWORK_NOEXCEPT {
 
           }
 

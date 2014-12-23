@@ -44,7 +44,7 @@ TEST(simple_sessions_test, threaded_sessions) {
   // created) so that we may be able to exercise the atomics and the
   // concurrency of the simple session manager.
   std::vector<std::future<std::string>> futures;
-  constexpr size_t max_sessions = 1000;
+  const size_t max_sessions = 1000;
   for (size_t counter = 0; counter < max_sessions; ++counter) {
     futures.emplace_back(std::async(std::launch::async, [&]() {
       return simple_sessions.lookup("")["id"];

@@ -30,7 +30,7 @@ else()
   set(BUILD_SHARED_LIBS OFF)
 endif()
 set(Boost_USE_MULTITHREADED ON)
-set(Boost_COMPONENTS system regex filesystem )
+set(Boost_COMPONENTS system regex filesystem date_time)
 find_package( Boost 1.53 REQUIRED ${Boost_COMPONENTS} )
 find_package( OpenSSL )
 find_package( Threads )
@@ -79,10 +79,12 @@ message(STATUS "C++ Compiler ID: ${CMAKE_CXX_COMPILER_ID}")
 message(STATUS "C++ Flags: ${CMAKE_CXX_FLAGS} link flags: ${CMAKE_CXX_LINK_FLAGS}")
 
 if (MSVC)
-  add_definitions(-D_SCL_SECURE_NO_WARNINGS)
+  add_definitions(-D_SCL_SECURE_NO_WARNINGS
+	-DBOOST_NO_CXX11_DEFAULTED_FUNCTIONS)
 endif(MSVC)
 if (WIN32)
-  add_definitions(-D_WIN32_WINNT=0x0501)
+  add_definitions(-D_WIN32_WINNT=0x0501
+	-DWIN32)
 endif(WIN32)
 include_directories(${Boost_INCLUDE_DIRS})
 

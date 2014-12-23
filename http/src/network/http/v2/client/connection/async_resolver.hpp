@@ -15,6 +15,7 @@
 
 #include <functional>
 #include <boost/asio/ip/tcp.hpp>
+#include <network/config.hpp>
 
 namespace network {
   namespace http {
@@ -57,7 +58,7 @@ namespace network {
           /**
            * \brief Destructor.
            */
-          virtual ~async_resolver() noexcept {
+          virtual ~async_resolver() NETWORK_NOEXCEPT {
 
           }
 

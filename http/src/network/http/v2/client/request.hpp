@@ -83,11 +83,11 @@ namespace network {
           /**
            * \brief Destructor.
            */
-          ~request_options() noexcept {
+          ~request_options() NETWORK_NOEXCEPT {
 
           }
 
-          void swap(request_options &other) noexcept {
+          void swap(request_options &other) NETWORK_NOEXCEPT {
             using std::swap;
             swap(resolve_timeout_, other.resolve_timeout_);
             swap(read_timeout_, other.read_timeout_);
@@ -140,7 +140,7 @@ namespace network {
         };
 
         inline
-        void swap(request_options &lhs, request_options &rhs) noexcept {
+        void swap(request_options &lhs, request_options &rhs) NETWORK_NOEXCEPT {
           lhs.swap(rhs);
         }
 
@@ -169,7 +169,7 @@ namespace network {
           /**
            * \brief Destructor.
            */
-          virtual ~byte_source() noexcept {}
+          virtual ~byte_source() NETWORK_NOEXCEPT {}
 
           /**
            * \brief Allows the request to read the data into a local
@@ -308,7 +308,7 @@ namespace network {
           /**
            * \brief Move constructor.
            */
-          request(request &&other) noexcept
+          request(request &&other) NETWORK_NOEXCEPT
             : url_(std::move(other.url_))
             , method_(std::move(other.method_))
             , path_(std::move(other.path_))
@@ -327,7 +327,7 @@ namespace network {
           /**
            * \brief Destructor.
            */
-          ~request() noexcept {
+          ~request() NETWORK_NOEXCEPT {
 
           }
 
@@ -335,7 +335,7 @@ namespace network {
            * \brief Swaps one request object with another.
            * \param other The other request object.
            */
-          void swap(request &other) noexcept {
+          void swap(request &other) NETWORK_NOEXCEPT {
             using std::swap;
             swap(url_, other.url_);
             swap(method_, other.method_);
@@ -506,7 +506,7 @@ namespace network {
         };
 
         inline
-        void swap(request &lhs, request &rhs) noexcept {
+        void swap(request &lhs, request &rhs) NETWORK_NOEXCEPT {
           lhs.swap(rhs);
         }
       } // namespace client_message

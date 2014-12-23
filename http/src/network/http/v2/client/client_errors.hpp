@@ -59,7 +59,7 @@ namespace network {
         /**
          * \brief Destructor.
          */
-        virtual ~invalid_url() noexcept;
+        virtual ~invalid_url() NETWORK_NOEXCEPT;
 
       };
 
@@ -80,7 +80,7 @@ namespace network {
         /**
          * \brief Destructor.
          */
-        virtual ~client_exception() noexcept;
+        virtual ~client_exception() NETWORK_NOEXCEPT;
 
       };
 

@@ -16,7 +16,7 @@ public:
 
   mock_async_resolver() { }
 
-  virtual ~mock_async_resolver() noexcept { }
+  virtual ~mock_async_resolver() NETWORK_NOEXCEPT { }
 
   virtual void async_resolve(const std::string &, std::uint16_t,
                              resolve_callback callback) {
@@ -35,7 +35,7 @@ public:
 
   fake_async_connection() { }
 
-  virtual ~fake_async_connection() noexcept { }
+  virtual ~fake_async_connection() NETWORK_NOEXCEPT { }
 
   virtual void async_connect(const boost::asio::ip::tcp::endpoint &,
                              const std::string &,

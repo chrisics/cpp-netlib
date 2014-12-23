@@ -95,14 +95,14 @@ namespace network {
         /**
          * \brief Destructor.
          */
-        ~client_options() noexcept {
+        ~client_options() NETWORK_NOEXCEPT {
 
         }
 
         /**
          * \brief Swap.
          */
-        void swap(client_options &other) noexcept {
+        void swap(client_options &other) NETWORK_NOEXCEPT {
           using std::swap;
           std::swap(io_service_, other.io_service_);
           swap(follow_redirects_, other.follow_redirects_);
@@ -276,7 +276,7 @@ namespace network {
       };
 
       inline
-      void swap(client_options &lhs, client_options &rhs) noexcept {
+      void swap(client_options &lhs, client_options &rhs) NETWORK_NOEXCEPT {
         lhs.swap(rhs);
       }
 
@@ -316,7 +316,7 @@ namespace network {
         /**
          * \brief Destructor.
          */
-        ~client() noexcept;
+        ~client() NETWORK_NOEXCEPT;
 
         /**
          * \brief Executes an HTTP request.

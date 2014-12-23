@@ -17,9 +17,13 @@ namespace http {
 struct session {
   session() = default;
   session(const session&) = default;
-  session(session&&) = default;
-  session& operator=(const session&) = default;
+
+#if !defined(BOOST_NO_CXX11_DEFAULTED_FUNCTIONS)
   session& operator=(session&&) = default;
+  session(session&&) = default;
+#endif  // !defined(BOOST_NO_CXX11_DEFAULTED_FUNCTIONS)
+
+  session& operator=(const session&) = default;
 
   void set(boost::string_ref key, boost::string_ref value, bool server_only = false);
   std::string get(boost::string_ref key, boost::string_ref default_value) const;

@@ -35,5 +35,6 @@ foreach(test ${CPP-NETLIB_CLIENT_TESTS})
 endforeach(test)
 
 if (OPENSSL_FOUND)
+  include_directories(${OPENSSL_INCLUDE_DIR})
   target_link_libraries(cpp-netlib-http-v2-ssl_connection_test ${OPENSSL_LIBRARIES})
 endif()

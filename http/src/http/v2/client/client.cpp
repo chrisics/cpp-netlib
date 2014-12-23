@@ -54,7 +54,7 @@ namespace network {
              std::unique_ptr<client_connection::async_connection> mock_connection,
              client_options options);
 
-        ~impl() noexcept;
+        ~impl() NETWORK_NOEXCEPT;
 
         std::future<response> execute(std::shared_ptr<request_helper> helper);
 
@@ -114,7 +114,7 @@ namespace network {
 
       }
 
-      client::impl::~impl() noexcept {
+      client::impl::~impl() NETWORK_NOEXCEPT {
         sentinel_.reset();
         lifetime_thread_.join();
       }
@@ -331,7 +331,7 @@ namespace network {
                      client_options options)
         : pimpl_(new impl(std::move(mock_resolver), std::move(mock_connection), options)) { }
 
-      client::~client() noexcept {
+      client::~client() NETWORK_NOEXCEPT {
         delete pimpl_;
       }
 

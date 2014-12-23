@@ -106,7 +106,7 @@ BOOST_CONCEPT_REQUIRES(((ClientRequest<Request>)), (OutputIterator))
     std::string host_ = host(request);
     boost::copy(host_, oi);
   }
-  boost::optional<boost::uint16_t> port_ = port(request);
+  boost::optional<boost::uint16_t> port_ = boost::optional<boost::uint16_t>(port(request));
   if (port_) {
     string_type port_str = boost::lexical_cast<string_type>(*port_);
     *oi = consts::colon_char();
